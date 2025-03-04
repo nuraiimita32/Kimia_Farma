@@ -1,6 +1,18 @@
 #Buat tabel analisa
 
-WITH calculated_data AS ( SELECT t.transaction_id, t.date, t.branch_id, b.branch_name, b.kota, b.provinsi, b.rating AS rating_cabang, t.customer_name, t.product_id, p.product_name, t.price, t.discount_percentage,
+WITH calculated_data AS ( 
+SELECT t.transaction_id, 
+       t.date, t.branch_id, 
+       b.branch_name, 
+       b.kota, 
+       b.provinsi, 
+       b.rating AS rating_cabang, 
+       t.customer_name, 
+       t.product_id, 
+       p.product_name, 
+       t.price, 
+       t.discount_percentage,
+     
 -- Menghitung persentase laba berdasarkan harga obat
 CASE WHEN t.price <= 50000 THEN 0.10
      WHEN t.price > 50000 AND t.price <= 100000 THEN 0.15
