@@ -1,5 +1,6 @@
 #Buat tabel analisa
 
+
 WITH calculated_data AS ( SELECT
         t.transaction_id,
         t.date,
