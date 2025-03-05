@@ -1,7 +1,5 @@
-#Buat tabel analisa
 
-
-WITH calculated_data AS ( SELECT
+        WITH calculated_data AS ( SELECT
         t.transaction_id,
         t.date,
         t.branch_id,
@@ -15,7 +13,6 @@ WITH calculated_data AS ( SELECT
         t.price,
         t.discount_percentage,
         
-        -- Menghitung persentase laba berdasarkan harga obat
         CASE 
             WHEN t.price <= 50000 THEN 0.10
             WHEN t.price > 50000 AND t.price <= 100000 THEN 0.15
@@ -44,5 +41,5 @@ WITH calculated_data AS ( SELECT
         ON t.branch_id = b.branch_id
     LEFT JOIN `rakamin-kf-analytics-452705.kimia_farma.KF_Product` AS p
         ON t.product_id = p.product_id
-)
-SELECT * FROM calculated_data;
+        )
+        SELECT * FROM calculated_data;
