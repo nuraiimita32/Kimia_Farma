@@ -1,5 +1,5 @@
 
-        WITH calculated_data AS ( SELECT
+        WITH tabel_analisa AS ( SELECT
         t.transaction_id,
         t.date,
         t.branch_id,
@@ -42,4 +42,4 @@
     LEFT JOIN `rakamin-kf-analytics-452705.kimia_farma.KF_Product` AS p
         ON t.product_id = p.product_id
         )
-        SELECT * FROM calculated_data;
+        SELECT * FROM tabel_analisa;
